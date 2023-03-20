@@ -13,7 +13,7 @@ int main(void)
 	lastD = n % 10;	
 	if(lastD >= 0)
 	{
-		printf("Last digit of %d is %d and %s", n, lastD, lastD == 0 ? "is 0" : "is greater than 5\n");		
+		printf("Last digit of %d is %d and %s\n", n, lastD, lastD == 0 ? "is 0" : "is greater than 5");		
 	}
 	else
 	{
