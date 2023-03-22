@@ -11,15 +11,16 @@ void print_alphabet_x10(){
 	end = '\n';
 	while(1){
 		if(j>=10)
-			break; 
+			break;
 		if(i > 'z'){
 			i = end;
 		}
 		_putchar((char)i);
 		
 		if(i==end){
-			j++
-			break;
+			j++;
+			i='a';
+		}
 		i++;		
 	}
 	
