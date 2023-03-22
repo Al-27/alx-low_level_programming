@@ -7,8 +7,7 @@ int main(void)
 {
 	int i = 0;
 	char put[] = "_putchar\n";
-	for(; i < (int)sizeof(put) ; i++)
+	for(; i < (int)sizeof(put)-1 ; i++)
 		putchar(put[i]);
 	return (0);
 }
-
