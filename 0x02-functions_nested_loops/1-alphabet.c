@@ -2,8 +2,13 @@
 #include "main.h"
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
-void print_alphabet();
+/* betty style doc for function main goes there */ 
+int main(void)
+{
+	print_alphabet();
+	return (0);
+}
+
 void print_alphabet(){
 	
 	int i,end;
@@ -21,10 +26,4 @@ void print_alphabet(){
 		i++;		
 	}
 	
-}
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
 }
