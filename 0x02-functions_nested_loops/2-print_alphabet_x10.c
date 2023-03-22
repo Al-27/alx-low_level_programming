@@ -19,8 +19,8 @@ void print_alphabet_x10(){
 		
 		if(i==end){
 			j++;
-			i='a';
-		}
+			i='a'-1;
+		} 
 		i++;		
 	}
 	
