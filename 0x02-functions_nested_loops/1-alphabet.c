@@ -1,3 +1,4 @@
+ 
 void print_alphabet(){
 	
 	int i,end;
@@ -8,7 +9,7 @@ void print_alphabet(){
 		if(i > 'z'){
 			i = end;
 		}
-		putchar((char)i);
+		_putchar((char)i);
 		
 		if(i==end)
 			break;
