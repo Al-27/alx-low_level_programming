@@ -1,9 +1,14 @@
 #include <stdio.h>
+#include "main.h"
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
 int main(void)
 {
-	printf("_putchar\n");
+	int i = 0;
+	char put[] = "_putchar\n";
+	for(; i < (int)sizeof(put) ; i++)
+		putchar(put[i]);
 	return (0);
 }
+
