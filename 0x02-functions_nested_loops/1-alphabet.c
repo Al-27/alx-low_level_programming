@@ -3,6 +3,7 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
+void print_alphabet();
 void print_alphabet(){
 	
 	int i,end;
