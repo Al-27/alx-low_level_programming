@@ -6,33 +6,34 @@
  */
 void print_times_table(int n){
 	
-	int i, j, ones, tens, sum, MAX;
+	int i, j, ones, tens, hund, sum, MAX;
 	
 	MAX = n+1;
-	if(n <= 15 && n >= 0)
-		for(i=0; i < MAX; i++){
+	
+	for(i=0; i < MAX; i++){
+		
+		putchar('0'); 
+		putchar(','); 
+		for(j = 1; j < MAX; j++){
 			
-			_putchar('0'); 
-			_putchar(','); 
-			for(j = 0; j < MAX; j++){
-				
-				sum = i * j;
-				
-				ones = (sum % 10);
-				tens = sum / 10  == 0 ?' ' : '0'+(sum)/10 ;
-				_putchar(' '); 
-				_putchar(tens); 
-				_putchar(ones +'0'); 
-				if(j == 9)
-					_putchar('\n');
-				else{
-					_putchar(','); 
-				} 
-				
-			}
+			sum = i * j;
 			
-		}	
-	else
-		_putchar('\n');	
+			ones = (sum % 10);
+			tens = sum / 10  == 0 ?' ' : '0'+(sum)/10 ;
+			tens = sum / 100  == 0 ?' ' : '0'+(sum)/100 ;
+			putchar(' '); 
+			putchar(hund); 
+			putchar(tens); 
+			putchar(ones +'0'); 
+			if(j == n)
+				putchar('\n');
+			else{
+				putchar(','); 
+			} 
+			
+		}
+		
+	}	
+		
 	
 } 
