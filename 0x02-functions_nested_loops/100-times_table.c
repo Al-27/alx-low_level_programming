@@ -14,7 +14,7 @@ void print_times_table(int n){
 		
 		_putchar('0'); 
 		_putchar(','); 
-		for(j = 0; j < MAX; j++){
+		for(j = 1; j < MAX; j++){
 			
 			sum = i * j;
 			
