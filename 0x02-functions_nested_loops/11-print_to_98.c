@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * print_to_98 - This is a rand desci
- * @a: First parameter
+ * @n: First parameter
  *
  */
 void print_to_98(int n){
