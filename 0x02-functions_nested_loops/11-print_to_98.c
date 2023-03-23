@@ -1,7 +1,8 @@
+#include <stdio.h> 
 #include "main.h"
 /**
  * print_to_98 - This is a rand desci
- * @n: First parameter
+ * @a: First parameter
  *
  */
 void print_to_98(int n){
@@ -10,24 +11,22 @@ void print_to_98(int n){
         while(1){
 
                 if(n >= 98 ){
-                        _putchar((n--) + '0');
+                        printf("%d",n--);
                         if(n < 98){
-                                _putchar('\n');
+                                putchar('\n');
                                 break;
                         }
-                        _putchar(",");
-                        _putchar(" ");
+                        printf(", ");
                 }
                 else{
 
-                        _putchar((n++) + '0');
+                        printf("%d", n++) ;
 
                         if(n>98){
-                                _putchar('\n');
+                                putchar('\n');
                                 break;
                         }
-                        _putchar(",");
-                        _putchar(" ");
+                        printf(", ");
                 }
         }
 
