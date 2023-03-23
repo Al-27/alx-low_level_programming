@@ -9,7 +9,7 @@ void print_times_table(int n){
 	int i, j, ones, tens, hund, sum, MAX;
 	
 	MAX = n+1;
-	if(n > 0 && n <=15);
+	if(n >= 0 && n <=15)
 	for(i=0; i < MAX; i++){
 		
 		_putchar('0'); 
