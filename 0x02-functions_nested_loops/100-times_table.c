@@ -12,8 +12,8 @@ void print_times_table(int n){
 	
 	for(i=0; i < MAX; i++){
 		
-		putchar('0'); 
-		putchar(','); 
+		_putchar('0'); 
+		_putchar(','); 
 		for(j = 1; j < MAX; j++){
 			
 			sum = i * j;
@@ -21,14 +21,14 @@ void print_times_table(int n){
 			ones = (sum % 10);
 			tens = sum / 10  == 0 ?' ' : '0'+(sum)/10 ;
 			tens = sum / 100  == 0 ?' ' : '0'+(sum)/100 ;
-			putchar(' '); 
-			putchar(hund); 
-			putchar(tens); 
-			putchar(ones +'0'); 
+			_putchar(' '); 
+			_putchar(hund); 
+			_putchar(tens); 
+			_putchar(ones +'0'); 
 			if(j == n)
-				putchar('\n');
+				_putchar('\n');
 			else{
-				putchar(','); 
+				_putchar(','); 
 			} 
 			
 		}
