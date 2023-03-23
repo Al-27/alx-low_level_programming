@@ -20,7 +20,7 @@ void print_times_table(int n){
 			
 			ones = (sum % 10);
 			tens = sum / 10  == 0 ?' ' : '0'+(sum)/10 ;
-			tens = sum / 100  == 0 ?' ' : '0'+(sum)/100 ;
+			hund = sum / 100  == 0 ?' ' : '0'+(sum)/100 ;
 			_putchar(' '); 
 			_putchar(hund); 
 			_putchar(tens); 
