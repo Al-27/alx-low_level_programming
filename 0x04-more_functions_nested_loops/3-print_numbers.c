@@ -1,9 +1,8 @@
-#include "main.h"
 /**
- * _isdigit - This is a rand desci
+ * print_numbers - This is a rand desci
  *
  */
-void print_numbers()){
+void print_numbers(){
 	int i = '0';
 	while(1){
 		
