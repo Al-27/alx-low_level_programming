@@ -1,6 +1,8 @@
 #include <stdio.h> 
 /**
  * main - This is a rand desci
+ *
+ * Return: 0
  */
 int main(void)
 {
