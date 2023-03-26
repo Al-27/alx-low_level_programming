@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_numbers - This is a rand desci
  *
@@ -14,5 +15,6 @@ void print_numbers(){
 			i = '\n';
 		
 	}
+	
 	
 }
