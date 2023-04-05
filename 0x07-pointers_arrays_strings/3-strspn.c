@@ -10,7 +10,7 @@
  
  unsigned int _strspn(char *s, char *accept)
  {
- 	unsigned int count, i, j;
+ 	int count, i, j;
  	
  	count = i = j = 0;
  	while(*s){
@@ -23,7 +23,7 @@
  				count++;
  				
 				while(j--)
-				 *accept--;
+				 accept--;
 				 
 				 i = 1;
 				 break;
@@ -33,8 +33,7 @@
  		if(!i)
  			break;
  			
- 		*++s;
+ 		s++;
  	}
  	return count;
  }
-

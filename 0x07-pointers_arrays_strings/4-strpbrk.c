@@ -22,10 +22,10 @@ char *_strpbrk(char *s, char *accept)
 				 return s;
  			}
  		}
-		while(j--)
-		 *accept--;
-		 
- 		*++s;
+		while(j--){
+		 accept--;
+		}
+ 		s++;
  	}
  	return NULL;
  }
