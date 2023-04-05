@@ -25,6 +25,7 @@
 				while(j--)
 				 accept--;
 				 
+				 j = 0;
 				 i = 1;
 				 break;
  			}

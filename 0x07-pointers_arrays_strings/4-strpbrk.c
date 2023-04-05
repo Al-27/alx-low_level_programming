@@ -25,6 +25,8 @@ char *_strpbrk(char *s, char *accept)
 		while(j--){
 		 accept--;
 		}
+		
+		j = 0;
  		s++;
  	}
  	return NULL;
