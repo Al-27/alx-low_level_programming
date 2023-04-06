@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-  * _pow_recursion: func
-  * @x: arg
-  * @y: arg
+  * _pow_recursion: function desc
+  * @x: arg 1
+  * @y: arg 2
   *
   * Return: int
   */
