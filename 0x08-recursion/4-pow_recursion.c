@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * _pow_recursion: description
+  * _pow_recursion - description
   * @x: Description of parameter 
   * @y: Description of parameter 
   *
