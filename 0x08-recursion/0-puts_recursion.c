@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * _puts_recursion : function desc
+  * _puts_recursion - function desc
   * @s : arg
   *
   */

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * factorial:  function desc
+  * factorial - function desc
   * @n: arg
   *
   * Return: int
