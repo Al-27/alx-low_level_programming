@@ -13,7 +13,7 @@ int main(int __attribute__((unused)) argc, char *argv[])
 	
 	sum = 0;
 	while(argc-- && argc > 1){
-		if(*argv[argc] != '0' && !atoi(argv[argc])){
+		if(*argv[argc] != '0' && atoi(argv[argc]) == 0){
 			printf("Error\n");
 			return 1;
 		}
