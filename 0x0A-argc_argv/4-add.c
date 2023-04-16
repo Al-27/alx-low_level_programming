@@ -9,10 +9,16 @@
   */
 int main(int __attribute__((unused)) argc, char *argv[])
 {
-	int sum;
+	int sum, i;
 	
 	sum = 0;
 	while(argc && argc-- > 1){
+		for(i = 0; *argv[i] != '\0'; i++)
+			if(!(*argv[i] >= '0' && *argv[i] <= '9'))
+			{
+				printf("Error\n");
+				return 1;
+			}
 		if(*argv[argc] != '0' && atoi(argv[argc]) == 0){
 			printf("Error\n");
 			return 1;
