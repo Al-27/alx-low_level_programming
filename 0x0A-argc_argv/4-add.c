@@ -19,6 +19,7 @@ int main(int __attribute__((unused)) argc, char *argv[])
 				printf("Error\n");
 				return 1;
 			}
+		
 		if(*argv[argc] != '0' && atoi(argv[argc]) == 0){
 			printf("Error\n");
 			return 1;
@@ -26,5 +27,6 @@ int main(int __attribute__((unused)) argc, char *argv[])
 		sum += atoi(argv[argc]);
 	}
 	printf("%d\n", sum);
+	
 	return 0;
 }
