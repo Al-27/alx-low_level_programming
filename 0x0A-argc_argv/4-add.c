@@ -13,8 +13,8 @@ int main(int __attribute__((unused)) argc, char *argv[])
 	
 	sum = 0;
 	while(argc && argc-- > 1){
-		for(i = 0; *argv[i] != '\0'; i++)
-			if(!(*argv[i] >= '0' && *argv[i] <= '9'))
+		for(i = 0; argv[argc][i] != '\0'; i++)
+			if(!(*argv[argc][i] >= '0' && *argv[argc][i] <= '9'))
 			{
 				printf("Error\n");
 				return 1;
