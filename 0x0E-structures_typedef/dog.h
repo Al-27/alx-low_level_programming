@@ -6,9 +6,9 @@
 #include <stdlib.h>
 /**
  * struct dog - Short description
- * @a: First member
- * @b: Second member
- * @c: Third member
+ * @name: First member
+ * @age: Second member
+ * @owner: Third member
  *
  * Description: Longer description
  */
