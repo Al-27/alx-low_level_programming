@@ -10,7 +10,8 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int iter;
-	
+	if(cmp == NULL)
+		return (-1);
 	if(array)
 	{
 		if(size > 0)
@@ -18,7 +19,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 			for(iter = 0;iter < size;iter++)
 			{
 				if(cmp(array[iter]) >= 1)
-					return iter;
+					return (iter);
 			}
 		}
 	}
