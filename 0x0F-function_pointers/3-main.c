@@ -1,8 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "3-op_functions.c"
-#include "3-get_op_func.c"
+#include "3-calc.h"
 /**
  * main - desc
  * @argc: int
