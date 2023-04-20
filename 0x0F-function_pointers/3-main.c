@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
    		printf("Error\n");
 		return (98);
 	}
-	if(strstr("/*+-%",argv[2]) == NULL)
+	if(strstr("/*+-%",argv[2]) == NULL || srlen(argv[2]) != 1)
 	{
    		printf("Error\n");
 		return (99);
