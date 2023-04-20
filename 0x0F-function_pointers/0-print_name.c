@@ -8,12 +8,16 @@
 void print_name(char *name, void (*f)(char *))
 {
 	char *empty = "";
-	if(name)
+	
+	if(f)
 	{
-		f(name);
-	}
-	else
-	{
-		f(empty);
+		if(name)
+		{
+			f(name);
+		}
+		else
+		{
+			f(empty);
+		}
 	}
 }
