@@ -1,7 +1,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define null NULL
 #include "3-op_functions.c"
 #include "3-get_op_func.c"
 /**
@@ -20,7 +19,7 @@ int main(int argc, char* argv[])
    		printf("Error\n");
 		return (98);
 	}
-	if(strstr("/*+-%",argv[2]) == null)
+	if(strstr("/*+-%",argv[2]) == NULL)
 	{
    		printf("Error\n");
 		return (99);
