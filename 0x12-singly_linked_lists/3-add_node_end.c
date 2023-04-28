@@ -8,7 +8,8 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int nullH;
+	int nullH, empty;
+	list_t *newl = NULL;
 	
 	nullH = *head == NULL;
 	
@@ -19,15 +20,14 @@ list_t *add_node_end(list_t **head, const char *str)
 			return add_node_end(&(*head)->next, str);		
 		}
 	}
-	list_t *newl = malloc(sizeof(list_t));
-	int empty;
+	newl = malloc(sizeof(list_t));
 	
-	empty = str ? 0 : 1;  
+	empty = str == NULL ? 1 : 0;  
 	
 	if(newl == NULL)
 		return NULL;
 
-	if(str)
+	if(!empty)
 	{
 		newl->str = strdup(str);
 		newl->len = str_len(str);
@@ -52,4 +52,3 @@ list_t *add_node_end(list_t **head, const char *str)
 	return newl;
 	
 }
-
