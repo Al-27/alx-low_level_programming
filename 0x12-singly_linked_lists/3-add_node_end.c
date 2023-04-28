@@ -52,3 +52,29 @@ list_t *add_node_end(list_t **head, const char *str)
 	return newl;
 	
 }
+
+/**
+ * str_len - desc
+ * @s: param
+ *
+ * Return: int
+ */
+int str_len(const char *s)
+{
+	const char *c;
+	int len;
+	
+	c = s;
+	len = 0;
+	if(!s)
+	{
+		return 0;
+	}
+	while(*c)
+	{
+		len++;
+		c++;
+	}
+	
+	return len;
+}
