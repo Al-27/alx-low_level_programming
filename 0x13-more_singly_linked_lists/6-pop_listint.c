@@ -41,7 +41,7 @@ int pop_listint(listint_t **head)
  */
 size_t listint_len(const listint_t *h)
 {
-	listint_t* tmp = h;
+	const listint_t* tmp = h;
 	int len;
 	
 	len = 0;
