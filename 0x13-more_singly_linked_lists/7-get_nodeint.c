@@ -13,7 +13,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	
 	len = listint_len( head );
 	
-	if( (index+1) > len )
+	if( (index+1) > (unsigned)len )
 	{
 		return null;
 	}
@@ -58,7 +58,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
  */
 size_t listint_len(const listint_t *h)
 {
-	listint_t* tmp = h;
+	const listint_t* tmp = h;
 	int len;
 	
 	len = 0;
