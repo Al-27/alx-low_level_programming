@@ -54,13 +54,12 @@ int delete_nodeint_at_index(listint_t **head, unsigned int idx)
 	return 1;
 } 
 
-#ifndef LEN 
- /**
- * len - desc
- * @h: param
- *
- * Return: type
- */
+/**
+* len - desc
+* @h: param
+*
+* Return: type
+*/
 int len(const listint_t *h)
 {
 	const listint_t* tmp = h;
@@ -75,4 +74,3 @@ int len(const listint_t *h)
 	
 	return len;	
 }
-#endif

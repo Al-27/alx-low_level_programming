@@ -11,10 +11,22 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *cur, *next, *new_;
-	int icur = idx; 
+	int icur = idx, list_len; 
+	
+	
+	cur = *head, next = null, new_ = new_struct(n); 
+	
+	if(!new_)
+	{
+		return null;
+	}
 	
 	if( !head )
 	{
+		if( icur == 0)
+		{			
+			return new_;	
+		}
 		return null;
 	}
 	
@@ -23,20 +35,23 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return null;
 	}
 	
-	if( icur >= len(*head) || icur < 0)
+	list_len = len(*head);
+	if( icur >= list_len || icur < 0)
 	{
+		if(icur == list_len)
+		{ 
+			while( (*head)->next ){
+				*head = (*head)->next;
+			}
+			(*head)->next = new_;
+			*head = cur;
+			
+			return new_;
+		}
 		return null;
 	}
 	
-	icur = idx - 1;
-	cur = *head, next = null, new_ = malloc( sizeof(listint_t) );
-	
-	if(!new_)
-	{
-		return null;
-	}
-	
-	new_->n = n;
+	icur = idx - 1; 
 	
 	if( idx == 0)
 	{
@@ -61,8 +76,27 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	return new_;
 } 
 
- #define LEN
- /**
+/**
+ * new_struct - desc
+ * @n: param
+ *
+ * Return: type
+ */
+listint_t *new_struct(int n)
+{
+	listint_t *new_ = malloc(sizeof(listint_t));
+	if(!new_)
+	{
+		return null;
+	}
+	
+	new_->n = n;
+	new_->next = null;
+	
+	return new_;
+}
+
+/**
  * len - desc
  * @h: param
  *
