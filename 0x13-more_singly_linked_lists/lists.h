@@ -40,4 +40,5 @@ listint_t *find_listint_loop(listint_t *head);
 listint_t *get_node(listint_t *head, unsigned int index);
 int len(const listint_t *h);
 listint_t *new_struct(int n);
+listint_t* reverser(listint_t *h);
 #endif
