@@ -38,10 +38,12 @@ listint_t *reverse_listint(listint_t **head)
 /**
  * reverser - desc
  * @h: param
+ * @ret: param
+ * @head: param
  *
  * Return: type
  */
-listint_t* reverser(listint_t *h, listint_t *ret,listint_t *head)
+listint_t* reverser(listint_t *h, listint_t *ret, listint_t *head)
 {
 	
 	if(h->next)
@@ -68,6 +70,8 @@ listint_t* reverser(listint_t *h, listint_t *ret,listint_t *head)
 /**
  * _len - desc
  * @h: param
+ * @tmp: param
+ * @len: param
  *
  * Return: type
  */
@@ -75,7 +79,6 @@ int _len(const listint_t *h, const listint_t *tmp,int len )
 {
 	tmp = h; 
 		
-	len = 0;
 	while(tmp != null)
 	{
 		len++;
@@ -84,4 +87,3 @@ int _len(const listint_t *h, const listint_t *tmp,int len )
 	
 	return len;	
 }
-
