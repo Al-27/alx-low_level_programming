@@ -17,15 +17,15 @@ listint_t *reverse_listint(listint_t **head)
 		
 	cur = *head, next = (*head)->next;
 	
-	if(len(*head) == 1)
+	if(_len(*head,null,0) == 1)
 		return *head;
-	else if(len(*head) == 2)
+	else if(_len(*head,null,0) == 2)
 	{
 		cur->next = null, next->next = cur;
 		(*head) = next;
 	}
 	
-	cur = reverser(*head);
+	cur = reverser(*head, null,null);
 	
 	*head = cur->next;
 	cur->next = null;
@@ -41,13 +41,12 @@ listint_t *reverse_listint(listint_t **head)
  *
  * Return: type
  */
-listint_t* reverser(listint_t *h)
+listint_t* reverser(listint_t *h, listint_t *ret,listint_t *head)
 {
-	listint_t *ret, *head;
 	
 	if(h->next)
 	{
-		ret = reverser(h->next);
+		ret = reverser(h->next, null,null);
 		head = ret->next;
 		
 		ret->next = h;
@@ -67,16 +66,15 @@ listint_t* reverser(listint_t *h)
 
 
 /**
- * len - desc
+ * _len - desc
  * @h: param
  *
  * Return: type
  */
-int len(const listint_t *h)
+int _len(const listint_t *h, const listint_t *tmp,int len )
 {
-	const listint_t* tmp = h;
-	int len;
-	
+	tmp = h; 
+		
 	len = 0;
 	while(tmp != null)
 	{
