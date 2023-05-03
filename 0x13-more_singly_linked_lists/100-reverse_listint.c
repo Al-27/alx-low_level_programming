@@ -23,6 +23,7 @@ listint_t *reverse_listint(listint_t **head)
 	{
 		cur->next = null, next->next = cur;
 		(*head) = next;
+		return (*head);
 	}
 	
 	cur = reverser(*head, null,null);
