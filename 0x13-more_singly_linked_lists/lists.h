@@ -43,4 +43,5 @@ listint_t *new_struct(int n);
 listint_t* reverser(listint_t *h,listint_t *,listint_t *);
 int _len(const listint_t *h, const listint_t *,int len );
 int exist_in_list(const listint_t *node, const listint_t *head, const listint_t *, const listint_t *);
+int free_list(listint_t *head,listint_t *cur);
 #endif

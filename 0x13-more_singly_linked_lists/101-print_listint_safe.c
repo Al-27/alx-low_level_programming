@@ -46,15 +46,18 @@ size_t print_listint_safe(const listint_t *head)
  * exist_in_list - desc
  * @node: param
  * @head: param
+ * @cur: param
+ * @next: param
  *
  * Return: type
  */
 int exist_in_list(cList *node, cList *head, cList *cur, cList *next)
 {
-	cur = head, next = node->next;
+	cur = head;
 	
 	while(cur)
 	{
+		next = node->next;
 		if( cur == next )
 		{
 			return 1;
