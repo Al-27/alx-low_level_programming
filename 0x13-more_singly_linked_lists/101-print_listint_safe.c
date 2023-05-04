@@ -10,6 +10,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *cur = head, *next = null;
 	int leng = 0, loop = 0;
+	printf("[%p] %i\n",(void*)cur,cur->n);
 	
 	while(cur)
 	{ 
@@ -25,10 +26,9 @@ size_t print_listint_safe(const listint_t *head)
 				}
 				break;
 			case 0:
-				printf("[%p] %i\n",(void*)cur,cur->n);
 				break;
 			case 1:
-				printf("-> [%p] %i",(void*)next,next->n);
+				printf("-> [%p] %i\n",(void*)next,next->n);
 				break;
 		}
 		if(loop == 1)
