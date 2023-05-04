@@ -32,7 +32,7 @@ int free_list(listint_t *head,listint_t *cur)
 	 if(loop == 1)
 	 {
 	 	cur->next = null;
-	 	free(cur); 
+	 	cur= null;  
 	 	return 1;
 	 }
 	 else if(loop == 0)
@@ -43,7 +43,7 @@ int free_list(listint_t *head,listint_t *cur)
 	 	}
 	 	else
 	 	{
-	 		 free(cur); 
+	 		 cur = null; 
 	 		return 1;
 	 	}
 	 }
