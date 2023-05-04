@@ -15,6 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	while(cur)
 	{ 
 		leng++;
+	
 		next = cur->next;
 		loop = exist_in_list(cur,head);
 		switch(loop)
