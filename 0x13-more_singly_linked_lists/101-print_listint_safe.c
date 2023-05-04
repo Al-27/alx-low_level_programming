@@ -10,14 +10,13 @@ size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *cur = head, *next = null;
 	int leng = 0, loop = 0;
-	printf("[%p] %i\n",(void*)cur,cur->n);
 	
 	while(cur)
 	{ 
 		leng++;
-	
 		next = cur->next;
 		loop = exist_in_list(cur,head);
+		printf("[%p] %i\n",(void*)cur,cur->n);
 		switch(loop)
 		{
 			case -1:
