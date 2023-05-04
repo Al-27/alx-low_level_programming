@@ -1,23 +1,19 @@
-#include "lists.h"
+#include "lists.h" 
 #define cList const listint_t
 /**
- * print_listint_safe - desc
+ * find_listint_loop - desc
  * @head: param
  *
  * Return: type
  */
-size_t print_listint_safe(const listint_t *head)
+listint_t *find_listint_loop(listint_t *head)
 {
-	const listint_t *cur = head, *next = null;
-	int leng = 0, loop = 0;
+	listint_t *cur = head, *next = null;
 	
 	while(cur)
-	{ 
-		leng++;
-		next = cur->next;
-		loop = exist_in_list(cur,head,null,null);
-		printf("[%p] %i\n",(void*)cur,cur->n);
-		switch(loop)
+	{  
+		next = cur->next;  
+		switch( exist_in_list(cur,head,null,null) )
 		{
 			
 			case -1:
@@ -29,17 +25,13 @@ size_t print_listint_safe(const listint_t *head)
 			case 0:
 				break;
 			case 1:
-				printf("-> [%p] %i\n",(void*)next,next->n);
+				return next;
 				break;
-		}
-		if(loop == 1)
-		{
-			break;
 		}
 		cur = next;
 	}
 	
-	return leng;
+	return null;
 }
 
 /**
