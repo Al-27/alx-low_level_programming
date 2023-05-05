@@ -9,6 +9,8 @@
 size_t free_listint_safe( listint_t **head)
 {
 	int leng = free_list(*head,*head);
+	if(leng >= 1)
+		free(*head);
 	*head = null;
 	return leng;
 }
@@ -32,7 +34,7 @@ int free_list(listint_t *head,listint_t *cur)
 	 if(loop == 1)
 	 {
 	 	cur->next = null;
-	 	cur= null;  
+	 	free(cur);  
 	 	return 1;
 	 }
 	 else if(loop == 0)
@@ -43,7 +45,7 @@ int free_list(listint_t *head,listint_t *cur)
 	 	}
 	 	else
 	 	{
-	 		 cur = null; 
+	 		free(cur); 
 	 		return 1;
 	 	}
 	 }
