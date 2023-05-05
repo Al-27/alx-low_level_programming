@@ -9,8 +9,6 @@
 size_t free_listint_safe( listint_t **head)
 {
 	int leng = free_list(*head,*head);
-	if(leng >= 1)
-		free(*head);
 	*head = null;
 	return leng;
 }
