@@ -51,31 +51,4 @@ int free_list(listint_t *head,listint_t *cur)
 	 return 0;
 }
 
-/**
- * exist_in_list - desc
- * @node: param
- * @head: param
- * @cur: param
- * @next: param
- *
- * Return: type
- */
-int exist_in_list(cList *node, cList *head, cList *cur, cList *next)
-{
-	cur = head;
-	
-	while(cur)
-	{
-		next = node->next;
-		if( cur == next )
-		{
-			return 1;
-		}
-		else if( cur == node)
-		{
-			return 0;
-		}
-		cur = cur->next;
-	}
-	return -1;
-}
+
