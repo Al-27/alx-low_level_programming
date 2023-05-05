@@ -39,6 +39,7 @@ int free_list(listint_t *head,listint_t *cur)
 	 {
 	 	if(next != null)
 	 	{
+	 		free(cur); 
 	 		return free_list(head, next) + 1;
 	 	}
 	 	else
