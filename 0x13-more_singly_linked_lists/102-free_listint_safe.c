@@ -16,7 +16,7 @@ size_t free_listint_safe( listint_t **head)
 /**
  * free_list - desc
  * @head: param
- * @next: param
+ * @cur: param
  *
  * Return: type
  */
