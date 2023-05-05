@@ -24,7 +24,7 @@ int free_list(listint_t *head,listint_t *cur)
 {
 	
 	listint_t *next = null;
-	int loop = 0;
+	int loop = 0, res = 0;
 	
 	loop = exist_in_list(cur,head,null,null);
 	 
@@ -32,19 +32,20 @@ int free_list(listint_t *head,listint_t *cur)
 	 if(loop == 1)
 	 {
 	 	cur->next = null;
-	 	free(cur);  
+	 	free(cur); 
 	 	return 1;
 	 }
 	 else if(loop == 0)
 	 {
 	 	if(next != null)
 	 	{
-	 		free(cur); 
-	 		return free_list(head, next) + 1;
+	 		res = free_list(head, next) + 1;
+	 		free(cur);
+	 		return res;
 	 	}
 	 	else
 	 	{
-	 		free(cur); 
+	 		 free(cur); 
 	 		return 1;
 	 	}
 	 }
