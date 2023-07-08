@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdio.h>
 
+#include <unistd.h>
 typedef unsigned long int ulInt;
 
 unsigned int binary_to_uint(const char *b);
