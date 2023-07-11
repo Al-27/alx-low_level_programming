@@ -28,6 +28,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
             return 0;
         
         len = read(file->_fileno,buffer,letters);
+        fclose(file);
+        
         ssread = write(STDOUT_FILENO, buffer, len);
         free(buffer);
         
