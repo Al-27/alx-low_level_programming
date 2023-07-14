@@ -26,7 +26,7 @@ void CloseFiled(FILE* fd)
 int main(int argc, char *args[])
 {
 
-    char *srcFilenm, *destFilenm, *error = NULL, *buffer = NULL;
+    char *srcFilenm, *destFilenm, *buffer = NULL;
     int readLen = 0, existNot = 1;
     FILE *src, *dest;
 
