@@ -9,7 +9,7 @@ void isNotNull(FILE *f, char *sf, int isDest)
 {
     if (!f)
     {
-        dprintf(STDERR_FILENO, "Error: Can't %s file %s\n", !isDest ? "read from" : "write to", sf);
+        dprintf(STDERR_FILENO, "Error: Can't %s %s\n", !isDest ? "read from" : "write to", sf);
         exit(98 + isDest);
     }
 }
