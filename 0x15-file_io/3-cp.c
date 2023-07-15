@@ -83,7 +83,12 @@ int main(int argc, char *args[])
         {
             isNotNull(NULL, srcFilenm, 0);
         }
-            
+        
+        if( write(dest->_fileno, buffer, readLen) != readLen)
+        {
+            isNotNull(NULL, destFilenm, 1);
+        }
+        
         fgetpos(src,&srcCur);
         write(dest->_fileno, buffer, readLen);
         free(buffer);
