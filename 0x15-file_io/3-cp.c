@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * isNotNull - func
+ * @f: arg
+ * @sf: arg
+ * @isDest: arg
+*/
 void isNotNull(FILE *f, char *sf, int isDest)
 {
     if (!f)
@@ -14,6 +20,11 @@ void isNotNull(FILE *f, char *sf, int isDest)
     }
 }
 
+/**
+ * CloseFiled - func
+ * @fd: arg
+ *
+*/
 void CloseFiled(FILE* fd)
 {
     if( close(fileno(fd)) != 0 )
@@ -23,6 +34,13 @@ void CloseFiled(FILE* fd)
     }
 }
 
+/**
+ * main - func
+ * @argc: arg
+ * @args: arg
+ *
+ * Return: int
+*/
 int main(int argc, char *args[])
 {
 
