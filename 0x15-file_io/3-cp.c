@@ -45,8 +45,9 @@ int main(int argc, char *args[])
 {
 
     char *srcFilenm, *destFilenm, *buffer = NULL;
-    int readLen = 0, existNot = 1;
+    int readLen = 0, existNot = 1, lastPos = -1;
     FILE *src, *dest;
+    fpos_t srcCur;
 
     if (argc < 3)
     {
@@ -69,18 +70,24 @@ int main(int argc, char *args[])
     }
     isNotNull(src, srcFilenm, 0);
     isNotNull(dest, destFilenm, 1);
+    fgetpos(src,&srcCur);
     
-       while (feof(src) == 0)
+    do
     {
+        lastPos = srcCur.__pos;
+        
         buffer = malloc(1024);
-        readLen = fread(buffer,1,1024,src);
-        if((ferror(src) || readLen < 1024) && !feof(src))
+        readLen = read(src->_fileno,buffer,1024);
+        
+        if(readLen == -1)
         {
             isNotNull(NULL, srcFilenm, 0);
         }
+            
+        fgetpos(src,&srcCur);
         write(dest->_fileno, buffer, readLen);
         free(buffer);
-    }
+    }while (srcCur.__pos != lastPos);
 
     CloseFiled(dest);
     CloseFiled(src);
