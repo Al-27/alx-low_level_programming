@@ -15,7 +15,7 @@ void isNotNull(FILE *f, char *sf, int isDest)
 {
     if (!f)
     {
-        dprintf(STDERR_FILENO, "Error: Can't %s %s\n", !isDest ? "read from" : "write to", sf);
+        dprintf(STDERR_FILENO, "Error: Can't %s %s\n", !isDest ? "read from file" : "write to", sf);
         exit(98 + isDest);
     }
 }
@@ -70,8 +70,8 @@ int main(int argc, char *args[])
     }
     isNotNull(src, srcFilenm, 0);
     isNotNull(dest, destFilenm, 1);
-    fgetpos(src,&srcCur);
     
+    fgetpos(src,&srcCur);    
     do
     {
         lastPos = srcCur.__pos;
@@ -83,14 +83,13 @@ int main(int argc, char *args[])
         {
             isNotNull(NULL, srcFilenm, 0);
         }
-        
+           
         if( write(dest->_fileno, buffer, readLen) != readLen)
         {
             isNotNull(NULL, destFilenm, 1);
-        }
+        } 
         
         fgetpos(src,&srcCur);
-        write(dest->_fileno, buffer, readLen);
         free(buffer);
     }while (srcCur.__pos != lastPos);
 
