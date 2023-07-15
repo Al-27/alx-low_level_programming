@@ -16,7 +16,7 @@ void isNotNull(FILE *f, char *sf, int isDest)
 
 void CloseFiled(FILE* fd)
 {
-    if( fclose(fd) != 0 )
+    if( close(fd) != 0 )
     {
         dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd->_fileno);
         exit(100);
@@ -56,11 +56,15 @@ int main(int argc, char *args[])
     {
         buffer = malloc(1024);
         readLen = fread(buffer,1,1024,src);
+        if(ferror(src))
+        {
+            isNotNull(NULL,srcFilenm,0);
+        }
         write(dest->_fileno, buffer, readLen);
         free(buffer);
     }
 
-    CloseFiled(src);
     CloseFiled(dest);
+    CloseFiled(src);
     return 0;
 }
