@@ -16,7 +16,7 @@ void isNotNull(FILE *f, char *sf, int isDest)
 
 void CloseFiled(FILE* fd)
 {
-    if( close(fd) != 0 )
+    if( close(fileno(fd)) != 0 )
     {
         dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd->_fileno);
         exit(100);
