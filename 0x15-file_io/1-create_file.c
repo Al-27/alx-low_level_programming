@@ -11,11 +11,16 @@ int create_file(const char *filename, char *text_content)
 {
     FILE *file = NULL;
     struct stat sfile;
-    int len = 0, written = 0;
+    int len = 0, written = 0, exists = 0;
     if( !filename )
         return -1;
-    
+    exists = access(filename,F_OK);
     file = fopen(filename,"w");
+    
+    if(exists == -1)
+    {
+        chmod(filename, 0600);
+    }
     /*
         get file stats (including file permissions)
     */
