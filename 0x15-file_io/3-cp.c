@@ -74,7 +74,7 @@ int main(int argc, char *args[])
     {
         buffer = malloc(1024);
         readLen = fread(buffer,1,1024,src);
-        if(ferror(src) != 0)
+        if((ferror(src) || readLen < 1024) && !feof(src))
         {
             isNotNull(NULL, srcFilenm, 0);
         }
