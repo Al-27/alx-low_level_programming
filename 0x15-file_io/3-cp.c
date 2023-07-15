@@ -70,11 +70,12 @@ int main(int argc, char *args[])
     isNotNull(src, srcFilenm, 0);
     isNotNull(dest, destFilenm, 1);
     
-    while (feof(src) == 0)
+     while (feof(src) == 0)
     {
         buffer = malloc(1024);
         readLen = fread(buffer,1,1024,src);
-        if(ferror(src))
+        readLen = read(fileno(src), buffer,1024);
+        if(readLen == -1)
         {
             isNotNull(NULL,srcFilenm,0);
         }
