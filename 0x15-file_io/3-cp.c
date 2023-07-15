@@ -76,7 +76,7 @@ int main(int argc, char *args[])
         readLen = fread(buffer,1,1024,src);
         if(ferror(src) != 0)
         {
-            printf("ferror(src): %d", ferror(src));
+            isNotNull(NULL, srcFilenm, 0);
         }
         write(dest->_fileno, buffer, readLen);
         free(buffer);
