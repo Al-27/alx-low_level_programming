@@ -7,6 +7,6 @@
 int get_endianness(void)
 {
     char a = 1;
-    
+
     return (a == 00000001);
 }
