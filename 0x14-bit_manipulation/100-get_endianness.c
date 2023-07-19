@@ -10,7 +10,7 @@ int get_endianness(void)
 
     if (a == 00000001)
     {
-        return (1);
+    return (1);
     }
 
     return (0);
