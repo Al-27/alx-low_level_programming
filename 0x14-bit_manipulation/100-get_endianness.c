@@ -7,8 +7,8 @@
  */
 int get_endianness()
 {
-    
-    if( __BYTE_ORDER == 1234 )
+    char a = 1;
+    if( 00000001 == a )
         return 1;
     
     return 0;
