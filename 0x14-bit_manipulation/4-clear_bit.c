@@ -10,7 +10,11 @@
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	ulInt num,  clear = ~1;
-	index = index == 0 ? return 1 : index-1;
+
+	if(index == 0)
+		return 1;
+	
+	index--;
 	
 	if(index > sizeof(*n)*8-1 )
 		return -1;
