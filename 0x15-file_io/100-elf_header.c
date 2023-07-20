@@ -140,18 +140,18 @@ int main(int argc, char* args[])
     
     lseek(elf_f->_fileno, 24, SEEK_SET);
     read(elf_f->_fileno, &entry_point, sizeof(entry_point));
-  
-    if(EI_MAG0 != elf_header[0] || EI_MAG2 != elf_header[2] )
+    
+    if(ELFMAG1 != elf_header[1] || ELFMAG0 != elf_header[0] )
     {
         return 98;
     }
     
-    printf("ELF Header:\n  Magic:  ");
+    printf("ELF Header:\n  Magic:   ");
     for( i = 0 ; i<16 ;i++ ) printf( " %.2x",elf_header[i]);
-    printf("\n%-36s %s","  Class:",get_class(elf_header[EI_CLASS]));
+     printf("\n%-36s %s","  Class:",get_class(elf_header[EI_CLASS]));
     printf("\n%-36s %s","  Data:", get_data(elf_header[EI_DATA]));
-    printf("\n%-36s %s%s","  Version:", elf_header[EI_VERSION] ? "1" : "<unknown>",
-    EV_CURRENT == elf_header[EI_VERSION] ? " (current)" : "");
+    printf("\n%-36s %s%s","  Version:", elf_header[EI_VERSION] ? "1 " : "<unknown>",
+    EV_CURRENT == elf_header[EI_VERSION] ? "(current)" : "");
     printf("\n%-36s %s","  OS/ABI:",get_osabi( elf_header[EI_OSABI]));
     printf("\n%-36s %x","  ABI Version:", elf_header[EI_ABIVERSION]);
     printf("\n%-36s %s","  Type:", get_type(elf_header[17] + elf_header[16]));
