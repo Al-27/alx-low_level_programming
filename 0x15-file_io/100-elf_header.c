@@ -110,7 +110,7 @@ char *get_type (unsigned uType)
 int main(int argc, char* args[])
 {
     char *filename;
-    unsigned long entry_point;
+    u_int32_t entry_point;
     int i = 0;
     unsigned char elf_header[25];
     FILE* elf_f = NULL;
@@ -139,7 +139,7 @@ int main(int argc, char* args[])
     read(elf_f->_fileno, elf_header, sizeof(elf_header));
     
     lseek(elf_f->_fileno, 24, SEEK_SET);
-    read(elf_f->_fileno, &entry_point, 4);
+    read(elf_f->_fileno, &entry_point, sizeof(entry_point));
 
     printf("ELF Header:\n  Magic:   ");
     for( i = 0 ; i<16 ;i++ ) printf( " %.2x",elf_header[i]);
@@ -149,7 +149,7 @@ int main(int argc, char* args[])
     printf("\n%-36s %s","  OS/ABI:",get_osabi( elf_header[EI_OSABI]));
     printf("\n%-36s %x","  ABI Version:", elf_header[EI_ABIVERSION]);
     printf("\n%-36s %s","  Type:", get_type(elf_header[16]));
-    printf("\n%-36s 0x%lx\n","  Entry point address:", entry_point);
+    printf("\n%-36s 0x%x\n","  Entry point address:", entry_point);
     
     return 0;    
 }
