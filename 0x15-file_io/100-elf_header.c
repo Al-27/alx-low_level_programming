@@ -149,7 +149,7 @@ int main(int argc, char* args[])
     printf("\n%-36s %s","  OS/ABI:",get_osabi( elf_header[EI_OSABI]));
     printf("\n%-36s %x","  ABI Version:", elf_header[EI_ABIVERSION]);
     printf("\n%-36s %s","  Type:", get_type(elf_header[16]));
-    printf("\n%-36s 0x%.4lx\n","  Entry point address:", entry_point);
+    printf("\n%-36s 0x%lx\n","  Entry point address:", entry_point);
     
     return 0;    
 }
