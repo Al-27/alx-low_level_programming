@@ -141,7 +141,7 @@ int main(int argc, char* args[])
     lseek(elf_f->_fileno, 24, SEEK_SET);
     read(elf_f->_fileno, &entry_point, sizeof(entry_point));
 
-    printf("ELF Header:\n  Magic:   ");
+    printf("ELF Header:\n  Magic:  ");
     for( i = 0 ; i<16 ;i++ ) printf( " %.2x",elf_header[i]);
     printf("\n%-36s %s","  Class:",get_class(elf_header[EI_CLASS]));
     printf("\n%-36s %s","  Data:", get_data(elf_header[EI_DATA]));
