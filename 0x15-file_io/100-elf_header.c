@@ -139,7 +139,7 @@ int main(int argc, char* args[])
     read(elf_f->_fileno, elf_header, sizeof(elf_header));
     
     lseek(elf_f->_fileno, 24, SEEK_SET);
-    read(elf_f->_fileno, &entry_point, sizeof(entry_point));
+    read(elf_f->_fileno, &entry_point, 4);
 
     printf("ELF Header:\n  Magic:   ");
     for( i = 0 ; i<16 ;i++ ) printf( " %.2x",elf_header[i]);
