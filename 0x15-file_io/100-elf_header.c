@@ -145,7 +145,7 @@ int main(int argc, char* args[])
     for( i = 0 ; i<16 ;i++ ) printf( " %.2x",elf_header[i]);
     printf("\n%-36s %s","  Class:",get_class(elf_header[EI_CLASS]));
     printf("\n%-36s %s","  Data:", get_data(elf_header[EI_DATA]));
-    printf("\n%-36s %s","  Version:", elf_header[EI_VERSION] ? "Current version" : "<unknown>");
+    printf("\n%-36s %s","  Version:", elf_header[EI_VERSION] ? "1 (current)" : "<unknown>");
     printf("\n%-36s %s","  OS/ABI:",get_osabi( elf_header[EI_OSABI]));
     printf("\n%-36s 0x%.2x","  ABI Version:", elf_header[EI_ABIVERSION]);
     printf("\n%-36s %s","  Type:", get_type(elf_header[16]));
