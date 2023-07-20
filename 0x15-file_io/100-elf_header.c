@@ -141,7 +141,7 @@ int main(int argc, char* args[])
     lseek(elf_f->_fileno, 24, SEEK_SET);
     read(elf_f->_fileno, &entry_point, sizeof(entry_point));
   
-    if(EI_MAG0 != elf_header[0] || EI_MAG2 != elf_header[1] )
+    if(EI_MAG0 != elf_header[0] || EI_MAG2 != elf_header[2] )
     {
         return 98;
     }
