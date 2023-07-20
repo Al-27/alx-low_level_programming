@@ -148,7 +148,7 @@ int main(int argc, char* args[])
     printf("\n%-36s %s","  Version:", elf_header[EI_VERSION] ? "1 (current)" : "<unknown>");
     printf("\n%-36s %s","  OS/ABI:",get_osabi( elf_header[EI_OSABI]));
     printf("\n%-36s %x","  ABI Version:", elf_header[EI_ABIVERSION]);
-    printf("\n%-36s %s","  Type:", get_type(elf_header[16]));
+    printf("\n%-36s %s","  Type:", get_type(elf_header[17] + elf_header[16]));
     printf("\n%-36s 0x%x\n","  Entry point address:", entry_point);
     
     return 0;    
