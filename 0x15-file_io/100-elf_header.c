@@ -146,7 +146,7 @@ int main(int argc, char* args[])
         return 98;
     }
     
-    printf("ELF Header:\n  Magic:   ");
+    printf("ELF Header:\n  Magic:  ");
     for( i = 0 ; i<16 ;i++ ) printf( " %.2x",elf_header[i]);
      printf("\n%-36s %s","  Class:",get_class(elf_header[EI_CLASS]));
     printf("\n%-36s %s","  Data:", get_data(elf_header[EI_DATA]));
