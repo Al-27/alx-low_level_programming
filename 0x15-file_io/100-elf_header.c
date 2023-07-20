@@ -109,7 +109,7 @@ char *get_type (unsigned uType)
  */
 int main(int argc, char* args[])
 {
-    char *filename, *content, *whitespace = "  ";
+    char *filename;
     unsigned long entry_point;
     int i = 0;
     unsigned char elf_header[25];
