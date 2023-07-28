@@ -2,9 +2,8 @@
  
 /** 
 * print_binary - desc  
-* @arg: arg  
+* @n: arg  
 *  
-* Return: type  
 */ 
 void print_binary(unsigned long int n)
 {
@@ -27,5 +26,9 @@ void print_binary(unsigned long int n)
             write(1,&c0,1);
    		}
     }
+    if( !init ){
+            c0 = 48;
+            write(1,&c0,1);
+   		}
 
 }
