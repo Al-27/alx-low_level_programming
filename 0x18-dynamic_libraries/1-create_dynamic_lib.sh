@@ -1,2 +1,3 @@
 #!/bin/bash
-dd if=/dev/zero of=/dev/sd1
+gcc -c -fPIC *.c
+gcc -shared -o liball.so *.o
