@@ -2,13 +2,13 @@
 
 void hash_table_print(const hash_table_t *ht)
 {
-    int i = 0, printed = 0;
+    u_long i = 0, printed = 0;
     hash_node_t *tmp = NULL;
     printf("{");
     
     if(ht)
     {
-        for(;i<ht->size;i++)
+        for(;i < ht->size;i++)
         {
             tmp = ht->array[i];
             

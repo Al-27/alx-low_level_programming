@@ -10,7 +10,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     {
         if(valid_key(key))
         {
-            index = key_index(key,ht->size);
+            index = key_index((u_char*) key,ht->size);
             isEnd = index == ht->size-1 ? 1 : 0;
             tmp = ht->array[index];
             if(tmp)
