@@ -23,22 +23,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
                     else
                     {
                         index = 0;
-                        while(1)
+                        while(tmp)
                         { 
-                            tmp = ht->array[index];
-                            
-                            if(tmp && index < ht->size)
+                            if(!strcmp(key,tmp->key))
                             {
-                               if(!strcmp(key,tmp->key))
-                                {
-                                    cValue = ht->array[index]->value;
-                                    break;
-                                }
+                                cValue = tmp->value;
                             }
-                            else
-                                break;
-                            
-                            index++;
+                            tmp = tmp->next;
                         }
                         
                     }
