@@ -1,6 +1,13 @@
 #include "hash_tables.h"
 
-
+/**
+ * hash_table_set - func
+ * @ht: arg
+ * @key: arg
+ * @value: arg 
+ *
+ * Return: int
+*/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
     u_long index = 0, isEnd = 0; 
