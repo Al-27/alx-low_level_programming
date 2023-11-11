@@ -3,7 +3,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    u_long index = 0; 
+    u_long index = 0, isEnd = 0; 
     hash_node_t* node = NULL, *tmp=NULL;
     int success = 0;
     if(ht)
@@ -47,7 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                 {
                     node->key = strdup(key);
                     node->value = strdup(value);
-                    node->next =  NULL;
+                    node->next = isEnd ? NULL : ht->array[index+1];
                     ht->array[index] = node;
                     success =  1;
                 }
