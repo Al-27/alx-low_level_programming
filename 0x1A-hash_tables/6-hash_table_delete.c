@@ -13,20 +13,38 @@ void hash_table_delete(hash_table_t *ht)
     if(ht)
     {
         for(;i<ht->size;i++)
-        {
-            tmp = ht->array[i];
-            
-            if(tmp)
-            {
-                free(tmp->key);
-                free(tmp->value);
-                free(tmp);
-                tmp = NULL;
-            }
+        {            
+            rec_free( ht->array[i]);
         }
         
         free(ht->array);
         free(ht);
         ht = NULL;
+    }
+}
+
+#include "hash_tables.h"
+
+/**
+ * rec_free - func
+ * @elem: arg
+ *
+*/
+void rec_free(hash_node_t* elem)
+{
+    if(elem)
+    {
+        if(elem->next)
+        {
+            rec_free(elem->next);
+            
+        }
+        free(elem->key);
+        free(elem->value);
+        free(elem);
+        
+        elem->key= NULL;
+        elem->value= NULL;
+        elem = NULL;
     }
 }

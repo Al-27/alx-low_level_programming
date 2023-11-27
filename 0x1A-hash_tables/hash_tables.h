@@ -47,4 +47,5 @@ void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht); 
 
 u_short valid_key(const char* key);
+void rec_free(hash_node_t* elem);
 #endif
