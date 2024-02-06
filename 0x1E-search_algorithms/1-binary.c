@@ -24,6 +24,10 @@ int binary_search(int *array, size_t size, int value)
         {
             beg = cur;
         }
+        else if( (end - beg) == 1)
+        {
+            break;
+        }
         else
         {
             end = cur;
