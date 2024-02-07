@@ -22,15 +22,15 @@ int binary_search(int *array, size_t size, int value)
             return cur;
         else if( value > val)
         {
-            beg = cur;
+            beg = cur+1;
         }
-        else if( (end - beg) == 1)
+        else if( (end - beg) <= 1)
         {
             break;
         }
         else
         {
-            end = cur;
+            end = cur-1;
         }
     }
     
