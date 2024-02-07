@@ -15,7 +15,7 @@ int binary_search(int *array, size_t size, int value)
     {
         printf("Searching in array: ");
         print_array(array, beg, end);
-        cur = ( beg + end ) / 2;
+        cur = ( beg + end ) / 2 - 1;
         val = array[cur];
         
         if(val == value)
@@ -30,7 +30,7 @@ int binary_search(int *array, size_t size, int value)
         }
         else
         {
-            end = cur-1;
+            end = cur;
         }
     }
     
