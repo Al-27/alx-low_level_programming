@@ -11,25 +11,22 @@
 int advanced_binary(int *array, size_t size, int value)
 {
     int beg = 0, cur = 0, end = (int)size, val, final = 0;
-    if(array && beg <= end)
+    if(array && beg < end)
     { 
         printf("Searching in array: ");
         print_array(array, beg, end);
         cur = ( beg + end ) / 2 ;
         val = array[cur];
-        printf("==[%d]==",cur);
-        
-        if(val == value && has_occurences(array,size,value,&cur) <= 2 )
+        if(val == value  && has_occurences(array,size,value,&cur) <= 2)
             return cur;
-        else if( value > val)
+        else if( value <= val)
         {
-            final = advanced_binary(array+cur+1,size-cur-1,value) ;
-            return final >= 0 ? final + cur +1 : -1;
-            
+            return advanced_binary(array,size-(cur),value);
         }
         else
         {
-            return advanced_binary(array,size-(cur),value);
+            final = advanced_binary(array+cur+1,size-cur-1,value) ;
+            return final >= 0 ? final + cur +1 : -1;
         }
     }
     
@@ -58,7 +55,7 @@ int has_occurences(int *array, int size, int val,int *m)
         {
             occ += 1;
         }
-        if(m && size <= 3)
+        if(m && size <= 2)
             if(array[(*m)-1] == array[*m])
                 *m = (*m) - 1;
         occ += has_occurences(array+1, size-1, val, NULL);
