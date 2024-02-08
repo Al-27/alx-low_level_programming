@@ -11,7 +11,7 @@
 int advanced_binary(int *array, size_t size, int value)
 {
     int beg = 0, cur = 0, end = (int)size - 1, val, final = 0;
-    if(array && beg < end)
+    if(array && beg <= end)
     { 
         printf("Searching in array: ");
         print_array(array, beg, end+1);
@@ -28,7 +28,7 @@ int advanced_binary(int *array, size_t size, int value)
         }
         else
         {
-            return advanced_binary(array,size-cur,value);
+            return advanced_binary(array,size-(cur-1),value);
         }
     }
     
