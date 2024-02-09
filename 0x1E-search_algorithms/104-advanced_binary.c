@@ -50,6 +50,15 @@ void print_array(int *array, int beg, int end)
         printf("%d%s", array[i], i+1 == end ? "\n" : ", " );
 }
 
+/**
+ * has_occurences - func
+ * @array: int*
+ * @size: int
+ * @val: int
+ * @m: int*
+ * 
+ * Return: int
+*/
 int has_occurences(int *array, int size, int val,int *m)
 {
     int occ = 0;
