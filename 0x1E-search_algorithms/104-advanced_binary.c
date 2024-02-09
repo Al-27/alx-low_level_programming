@@ -16,17 +16,21 @@ int advanced_binary(int *array, size_t size, int value)
         printf("Searching in array: ");
         print_array(array, beg, end);
         cur = ( beg + end ) / 2 ;
+        if(size <= 4 && size > 1)
+            cur--;
         val = array[cur];
+        /*
+        printf("===== %d -- %d -- %d :: %d\n\n",beg,cur,end,val);*/
         if(val == value  && has_occurences(array,size,value,&cur) <= 2)
             return cur;
-        else if( value <= val)
-        {
-            return advanced_binary(array,size-(cur),value);
-        }
-        else
+        else if( value > val)
         {
             final = advanced_binary(array+cur+1,size-cur-1,value) ;
             return final >= 0 ? final + cur +1 : -1;
+        }
+        else
+        {
+            return advanced_binary(array,size-(cur),value);
         }
     }
     
