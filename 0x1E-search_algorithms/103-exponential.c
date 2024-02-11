@@ -69,7 +69,7 @@ int exponential_search(int *array, size_t size, int value)
 		}
 		printf("Value found between indexes [%d] and [%d]\n", left, cur >= sz ? cur-1:cur);
 	}
-	sz -= left;
-	i = binary_search(array+left,(size_t)sz,value);
+	cur--;
+	i = binary_search(array+left,(size_t)cur,value);
    return i >= 0 ? i + left: i ;
 }
