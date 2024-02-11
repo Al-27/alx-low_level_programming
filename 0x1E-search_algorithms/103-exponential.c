@@ -58,7 +58,7 @@ int binary_search(int *array, size_t size, int value)
 */
 int exponential_search(int *array, size_t size, int value)
 {
-    int left = 0, cur = 1, sz = (int)size, i;
+    int left = 0, cur = 1, sz = (int)size, i=0;
 	if(array)
 	{
 		while(array[cur] < value && cur < sz)
