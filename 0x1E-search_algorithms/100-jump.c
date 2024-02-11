@@ -15,12 +15,12 @@ int jump_search(int *array, size_t size, int value)
 	if(array)
 	{
     	i = fmin(cur,sz)-1; 
-			printf("Value checked array[%d] = %d\n",0,array[0] );
+			printf("Value checked array[%d] = [%d]\n",0,array[0] );
 		while(array[i] < value)
 		{
 			left = cur;
 			cur = cur + sqrt(sz);
-			printf("Value checked array[%d] = %d\n",left,array[left] );
+			printf("Value checked array[%d] = [%d]\n",left,array[left] );
 			if( left >= sz)
 				return -1;
 			i = fmin(cur,sz);
@@ -29,7 +29,7 @@ int jump_search(int *array, size_t size, int value)
 		while(left<sz)
 		{
 			val = array[left];
-			printf("Value checked array[%d] = %d\n",left,val);
+			printf("Value checked array[%d] = [%d]\n",left,val);
 			if(val == value)
 				return left;
 			left++;
