@@ -21,8 +21,8 @@ int jump_search(int *array, size_t size, int value)
 			left = cur;
 			cur = cur + sqrt(sz);
 			printf("Value checked array[%d] = [%d]\n",left,array[left] );
-			if( left >= sz)
-				return -1;
+			if( cur >= sz-1 )
+				break;
 			i = fmin(cur,sz);
 		}
 		printf("Value found between indexes [%d] and [%d]\n", left,cur);
