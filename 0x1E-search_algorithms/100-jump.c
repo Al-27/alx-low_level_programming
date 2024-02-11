@@ -1,4 +1,4 @@
-#include "algo_search.h"
+#include "search_algos.h"
 
 /**
  * jump_search - func
